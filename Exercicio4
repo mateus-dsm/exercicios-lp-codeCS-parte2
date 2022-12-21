@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercicio4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(funcaoRetornaQuantidadePOV((decimal)0.1, 90));
+            Console.WriteLine(funcaoRetornaQuantidadePOV((decimal)0.1, 100));
+            Console.WriteLine(funcaoRetornaQuantidadePOV((decimal)0.2, 70));
+            Console.ReadKey();
+        }
+
+        public static int funcaoRetornaQuantidadePOV(decimal porcentagem, int totalNegociado)
+        {
+            // porcentagem * (totalNegociado + pov) = pov
+            // pov * (1 - porcentagem) = porcentagem * totalNegociado
+            // pov = totalNegociado * porcentagem / (1 - porcentagem)
+
+            decimal pov = totalNegociado * porcentagem / (1 - porcentagem);
+            return (int)pov;
+        }
+    }
+}
